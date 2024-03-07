@@ -7,21 +7,21 @@ alog trading | auto trading | program trading
 ## Directory Structure
 ```
     ├── okx-api-arbitrage
-    │   ├── services
-    │   │   ├── createOrder.js
-    │   │   ├── getBalance.js
-    │   │   ├── getIndicators.js
-    │   │   └── strategyOrder.js
-    │   ├── utils
-    │   │   ├── errorMode.js
-    │   │   ├── logFile.js
-    │   │   └── request.js
-    │   ├── index.js
-    │   ├── log.txt
+    │   ├── services      
+    │   │   ├── createOrder.js        -- create btc future order
+    │   │   ├── getBalance.js         -- get trading account available balance
+    │   │   ├── getIndicators.js      -- some common indicators
+    │   │   └── strategyOrder.js      -- Set profit and loss stop measures
+    │   ├── utils                   
+    │   │   ├── errorMode.js          -- error prompt
+    │   │   ├── logFile.js            -- for write logs
+    │   │   └── request.js            -- http request
+    │   ├── index.js                  -- startup    
+    │   ├── log.txt                   --  logs
     │   └── package.json
 ```
 
 ## Donate
 If you find this project useful, you can buy author a cup of coffee :coffee:  
-my ERC20 wallet address
+my ERC20 wallet address  
 ![donate](https://wangxiaofenggit.github.io/page/address.png)
