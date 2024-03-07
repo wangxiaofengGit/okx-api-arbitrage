@@ -21,18 +21,5 @@ alog trading | auto trading | program trading
 ## Donate
 
 If you find this project useful, you can buy author a glass of juice :tropical_drink:
-my ERC20 wallet address <a href="#" class="btn" id="copyButton" data-clipboard-text="asdasdsa">Copy</a>
+my ERC20 wallet address
 ![donate](https://wangxiaofenggit.github.io/page/address.png)
-
-```javascript
-var copyButton = document.getElementById('copyButton');
-var clipboard = new ClipboardJS(copyButton);
-
-clipboard.on('success', function(e) {
-    alert('copy success：' + e.text);
-    e.clearSelection();
-});
-
-clipboard.on('error', function(e) {
-    alert('copy failed');
-});
