@@ -1,3 +1,38 @@
 # okx-api-arbitrage
-nodejs crypto quantitative trading template 币圈量化，基于欧易okx-v5-api的模板，主体简易框架，可以自行编写交易策略。引流 币安binance bitget bybit 加密货币
-开发交流群+issues
+nodejs crypto quantitative trading template
+alog trading | auto trading | program trading
+币圈量化，基于欧易okx-v5-api的模板，简易框架，内置指标，可以自行编写你的交易策略
+请参考官方文档 refer to https://www.okx.com/docs-v5/en/#overview
+## Directory Structure
+ ├── okx-api-arbitrage
+        ├── services                    -- request api services
+        │   ├── createOrder.js
+        │   ├── getBalance.js
+        │   ├── getIndicators.js
+        │   ├── strategyOrder.js
+        ├── utils                      
+        │   ├── errorMode.js            -- for error prompt
+        │   ├── logFile.js              -- write logs
+        │   ├── request.js              -- http request 
+        ├── index.js                    -- startup 
+        ├── log.txt                     -- logs
+        └── package.json
+## Donate
+
+If you find this project useful, you can buy author a glass of juice :tropical_drink:
+my ERC20 wallet address <a href="#" class="btn" id="copyButton" data-clipboard-text="asdasdsa">Copy</a>
+![donate](https://wangxiaofenggit.github.io/page/address.png)
+
+<script>
+var copyButton = document.getElementById('copyButton');
+var clipboard = new ClipboardJS(copyButton);
+
+clipboard.on('success', function(e) {
+    alert('copy success：' + e.text);
+    e.clearSelection();
+});
+
+clipboard.on('error', function(e) {
+    alert('copy failed');
+});
+</script>

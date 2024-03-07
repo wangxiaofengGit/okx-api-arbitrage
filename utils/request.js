@@ -5,6 +5,7 @@ const crypto = require('crypto');
 const apiKey = '';
 const secretkey = '';
 const passphrase = '';
+
 // If you need to use a proxy to access the ip and port of the exchange api
 // const proxy = {
 //   host: '127.0.0.1',
@@ -15,10 +16,12 @@ const passphrase = '';
 const getTime = () => {
   return (new Date()).toISOString();
 }
+
 // signature operation
 const getSign = (str) => {
   return crypto.createHmac('sha256', secretkey).update(str).digest('base64');
 }
+
 // generate header information
 const getHeaders = (url, method, data = {}) => {
   let timestamp = getTime();

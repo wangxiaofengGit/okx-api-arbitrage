@@ -1,7 +1,12 @@
 
 const request = require('../utils/request');
 module.exports =  async function(sz,tpTriggerPx,slTriggerPx){
-
+  /**
+     * @param sz btc number (Minimum Unit 0.01)
+     * @param slTriggerPx Take Profit
+     * @param tpTriggerPx Stop Loss
+     * doc refer to https://www.okx.com/docs-v5/en/#overview
+  */
   const result =  await request('/api/v5/trade/order-algo','POST',{
     sz,
     instId:"BTC-USDT-SWAP",
