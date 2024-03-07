@@ -5,21 +5,22 @@ alog trading | auto trading | program trading
 请参考官方文档 refer to https://www.okx.com/docs-v5/en/#overview
 
 ## Directory Structure
-├── okx-api-arbitrage
-│   ├── services
-│   │   ├── createOrder.js
-│   │   ├── getBalance.js
-│   │   ├── getIndicators.js
-│   │   └── strategyOrder.js
-│   ├── utils
-│   │   ├── errorMode.js
-│   │   ├── logFile.js
-│   │   └── request.js
-│   ├── index.js
-│   ├── log.txt
-│   └── package.json
+```
+    ├── okx-api-arbitrage
+    │   ├── services
+    │   │   ├── createOrder.js
+    │   │   ├── getBalance.js
+    │   │   ├── getIndicators.js
+    │   │   └── strategyOrder.js
+    │   ├── utils
+    │   │   ├── errorMode.js
+    │   │   ├── logFile.js
+    │   │   └── request.js
+    │   ├── index.js
+    │   ├── log.txt
+    │   └── package.json
 ## Donate
 
-If you find this project useful, you can buy author a glass of juice :tropical_drink:
+If you find this project useful, you can buy author a cup of coffee :coffee:  
 my ERC20 wallet address
 ![donate](https://wangxiaofenggit.github.io/page/address.png)
