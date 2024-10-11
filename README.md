@@ -24,17 +24,6 @@ npm run start
 
 ## Donate
 If you find this project useful, you can buy author a cup of coffee :coffee:  
-my ERC20 wallet address  
-<button onclick="copyToClipboard()">Copy</button>
-<script>
-  function copyToClipboard() {
-    var tempInput = document.createElement("textarea");
-    tempInput.value = "0x0FB00e0434f31c4a169990cecF616E7170F2197E";
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    document.execCommand("copy");
-    document.body.removeChild(tempInput);
-    alert("The address has been successfully copied!");
-  }
-</script>
+my ERC20 wallet address[Copy](https://wangxiaofenggit.github.io/page/address.png)
+
 ![donate](https://wangxiaofenggit.github.io/page/address.png)
