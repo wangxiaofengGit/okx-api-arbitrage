@@ -24,6 +24,6 @@ npm run start
 
 ## Donate
 If you find this project useful, you can buy author a cup of coffee :coffee:  
-my ERC20 wallet address[Copy](https://wangxiaofenggit.github.io/page/address.png)
+my ERC20 wallet address[Copy](https://wangxiaofenggit.github.io/page/copy.html)
 
 ![donate](https://wangxiaofenggit.github.io/page/address.png)
