@@ -13,7 +13,7 @@ const getPrice = require('./services/getPrice');
 
 async function quantStart() {
     // Example 示例
-    console.log('\n strategy launch',new Date().toLocaleString());
+    console.log('strategy launch',new Date().toLocaleString());
 
     const mytBalance = await getBalance();
     if(!mytBalance){
