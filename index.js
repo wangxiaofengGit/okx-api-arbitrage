@@ -12,10 +12,8 @@ const getIndicators = require('./services/strategyOrder');
 const getPrice = require('./services/getPrice');
 
 async function quantStart() {
-  const { ma, ema } =  await getIndicators();
-  
-  // Example 示例
-    console.log('\nstrategy launch',new Date().toLocaleString());
+    // Example 示例
+    console.log('\n strategy launch',new Date().toLocaleString());
 
     const mytBalance = await getBalance();
     if(!mytBalance){
@@ -24,6 +22,7 @@ async function quantStart() {
       process.exit();
     }
 
+    const { ma, ema } =  await getIndicators();
     if(ema>ma){
       try{
         // futures order 下单
