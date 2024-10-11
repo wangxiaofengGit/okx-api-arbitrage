@@ -8,7 +8,7 @@ const createOrder = require('./services/createOrder');
 const strategyOrder = require('./services/strategyOrder');
 // get Technical Indicators
 const getIndicators = require('./services/strategyOrder');
-// get current Indicators
+// get current price
 const getPrice = require('./services/getPrice');
 
 async function quantStart() {
