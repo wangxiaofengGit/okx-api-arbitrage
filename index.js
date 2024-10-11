@@ -8,7 +8,7 @@ const createOrder = require('./services/createOrder');
 const strategyOrder = require('./services/strategyOrder');
 // get Technical Indicators
 const getIndicators = require('./services/strategyOrder');
-// get current price
+// get current Indicators
 const getPrice = require('./services/getPrice');
 
 async function quantStart() {
@@ -17,7 +17,7 @@ async function quantStart() {
 
     const mytBalance = await getBalance();
     if(!mytBalance){
-      console.log('failed to obtain account wallet balance, exit abnormally');
+      console.log('failed to obtain account wallet balance');
       // exit the script process
       process.exit();
     }
