@@ -15,7 +15,7 @@ alog trading | auto trading | program trading
     │   ├── utils                   
     │   │   ├── logFile.js            -- for write logs
     │   │   └── request.js            -- http request
-    │   ├── logs                      -- log files    
+    │   ├── logs                      -- log 
     │   ├── index.js                  -- startup
     │   └── package.json
 ```
