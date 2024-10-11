@@ -16,7 +16,7 @@ module.exports =  async function(sz,side="buy"){
   if(result.code === '0'){
     console.log('The contract order was successfully placed',result.data[0].ordId);
   }else{
-    errorMode('future order ',result);
+    throw new Error(`future order error: ${JSON.stringify(result)}`)
   }
 
 }

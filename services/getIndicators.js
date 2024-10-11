@@ -1,10 +1,10 @@
 const request = require('../utils/request');
 
 /**
-   * @param description Technical Indicators
+   * @param description Technical Indicators 技术指标
 */
 
-// moving average (MA)
+// moving average (MA) 移动平均线
 function getAveragetPrice(data) {
   let sum = data.reduce((prev,current) => {
     return prev+Number(current[4]);
@@ -12,7 +12,7 @@ function getAveragetPrice(data) {
   return sum/data.length;
 }
 
-// exponential moving average (EMA)
+// exponential moving average (EMA) 加权移动平均线
 function getEmaPrice(data){
     let arr = data.reverse();
     let emaList = [];
@@ -27,7 +27,7 @@ function getEmaPrice(data){
     return emaPrice;
 }
 
-// Stochastics (KDJ)
+// Stochastics (KDJ) 随机指标
 function getkdj(data){
   function getRsv(rsvData){
     let maxPrice = rsvData.reduce((prev,current) => {
@@ -55,7 +55,7 @@ function getkdj(data){
   return kdjAverage;
 }
 
-// Relative Strength Index (RSI)
+// Relative Strength Index (RSI) 相对强弱指数
 function getRsi(data){
   function calcRsi(rsiData){
     let up=0;
@@ -78,7 +78,7 @@ function getRsi(data){
   return rsiAverage;
 }
 
-// average True Range (ATR)
+// average True Range (ATR) 平均真实波动幅度
 function getAtrPirce(data){
   return data.reduce((prev,current,index) => {
     if(index===14){
@@ -91,7 +91,7 @@ function getAtrPirce(data){
   },0)/14
 }
 
-// Dochian Channel (DC)
+// Dochian Channel (DC) 唐奇安通道
 function getDcPirce(data){
   data[0][2] = data[0][2]*0.9999;
   data[0][3] = data[0][3]*1.0001;
@@ -112,7 +112,7 @@ function getDcPirce(data){
   
 module.exports =  async function(){
    /**
-     * @param limit number of kline data 
+     * @param limit number of kline data  k线数据
      * doc refer to https://www.okx.com/docs-v5/en/#overview
     */
   const result =  await request('/api/v5/market/candles','GET',{
@@ -123,7 +123,8 @@ module.exports =  async function(){
 
   if(result.code === '0'){
     return{
-      ma: getAveragetPrice(result.data),
+      ma5: getAveragetPrice(result.data.slice(0,5)),
+      ma20: getAveragetPrice(result.data),
       ema: getEmaPrice(result.data),
       dcPirce: getDcPirce(result.data),
       atr: getAtrPirce(result.data.slice(0,15)),
@@ -131,7 +132,7 @@ module.exports =  async function(){
       rsi: getRsi(result.data.slice(0,13)),
     }
   }else{
-    errorMode('get kline data',result);
+    throw new Error(`get kline data error: ${JSON.stringify(result)}`)
   }
   
 }

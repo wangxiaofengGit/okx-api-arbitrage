@@ -1,5 +1,4 @@
 require('./utils/logFile');
-require('./utils/errorMode');
 
 // Get asset balance
 const getBalance = require('./services/getBalance');
@@ -9,23 +8,38 @@ const createOrder = require('./services/createOrder');
 const strategyOrder = require('./services/strategyOrder');
 // get Technical Indicators
 const getIndicators = require('./services/strategyOrder');
+// get current Indicators
+const getPrice = require('./services/getPrice');
 
 async function quantStart() {
-  const { ma, ema, atr, dcPirce, kdj, rsi } =  getIndicators();
+  const { ma, ema } =  await getIndicators();
   
-  // example
+  // Example 示例
     console.log('\nstrategy launch',new Date().toLocaleString());
+
     const mytBalance = await getBalance();
     if(!mytBalance){
       console.log('failed to obtain account wallet balance, exit abnormally');
-      // Exit the script process
+      // exit the script process
       process.exit();
     }
-    // futures order
-    await createOrder(1,'buy');
-    // Order by TP or SL
-    await strategyOrder(1,  60000, 50000);
-    // do some thing...
-}
 
+    if(ema>ma){
+      try{
+        // futures order 下单
+        await createOrder(1,'buy');
+        // the current price
+        const currentPrice = await getPrice();
+        // Order by TP or SL 止盈止损 
+        const TPPrice = currentPrice+=currentPrice*0.03;
+        const SLPrice = currentPrice-=currentPrice*0.01;
+        await strategyOrder(1,  TPPrice, SLPrice);
+        // do some thing...
+      } catch(error){
+        console.log(error.message);
+      }
+    }
+    
+}
+ 
 quantStart();

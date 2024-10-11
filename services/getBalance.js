@@ -12,7 +12,7 @@ module.exports =  async function(){
   if(result.code === '0'){
     return result.data[0].details.trading;
   }else{
-    errorMode('getting account balance',result);
+    throw new Error(`getting account balance error: ${JSON.stringify(result)}`)
   }
   
 }

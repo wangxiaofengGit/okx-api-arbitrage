@@ -13,13 +13,14 @@ alog trading | auto trading | program trading
     │   │   ├── getIndicators.js      -- some common indicators
     │   │   └── strategyOrder.js      -- Set profit and loss stop measures
     │   ├── utils                   
-    │   │   ├── errorMode.js          -- error prompt
     │   │   ├── logFile.js            -- for write logs
     │   │   └── request.js            -- http request
-    │   ├── index.js                  -- startup    
-    │   ├── log.txt                   --  logs
+    │   ├── logs                      -- log files    
+    │   ├── index.js                  -- startup
     │   └── package.json
 ```
+## Startup
+npm run start
 
 ## Donate
 If you find this project useful, you can buy author a cup of coffee :coffee:  
