@@ -34,7 +34,7 @@ class WebSocketClient extends EventEmitter {
 
     this.ws.on('message', (data) => {
       const message = JSON.parse(data);
-      // Launch a custom event and pass the received message out
+      // Launch a custom event and pass the received message out 推送实时价格
       this.emit('receivedMessage', message.data&&message.data[0].last);
     });
 
