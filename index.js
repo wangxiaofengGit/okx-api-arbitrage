@@ -16,13 +16,6 @@ const getIndicators = require('./services/strategyOrder');
 async function quantStart(){
   console.log('strategy launch');
 
-  const mytBalance = await getBalance();
-  if(!mytBalance){
-    console.log('failed to obtain account wallet balance');
-    // exit the script process
-    process.exit();
-  }
-
   let currentPrice;
   // Get real-time tick prices 推送的实时价格
   wsClient.on('receivedMessage', (tickPrice) => {
