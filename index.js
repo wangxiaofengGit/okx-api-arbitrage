@@ -15,7 +15,7 @@ async function quantStart(){
   console.log('strategy launch');
 
   let currentPrice;
-  // Get real-time tick prices 推送的实时价格
+  // Get real-time tick prices 实时价格
   wsClient.on('receivedMessage', (tickPrice) => {
     currentPrice = tickPrice;
   });
