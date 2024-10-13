@@ -4,8 +4,6 @@ const WebSocketClient = require('./utils/webSocket');
 // Create WebSocket client instance
 const wsClient = new WebSocketClient();
 
-// Get asset balance
-const getBalance = require('./services/getBalance');
 // Open futures order
 const createOrder = require('./services/createOrder');
 // Create Take Profit and Stop Loss
