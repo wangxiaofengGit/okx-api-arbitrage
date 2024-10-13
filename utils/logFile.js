@@ -1,7 +1,6 @@
 const fs = require('fs');
 const util = require('util');
 const path = require('path');
-const getCurrentDate = require('../utils/date');
 
 // 动态生成 logs 文件夹（如果不存在）
 const logsDir = path.resolve(__dirname, '../logs');
@@ -9,7 +8,15 @@ if (!fs.existsSync(logsDir)) {
     fs.mkdirSync(logsDir);
 }
 
-let currentLogDate = getCurrentDate().split(' ')[0]; // 当前日志日期
+function getCurrentDate() {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+let currentLogDate = getCurrentDate(); // 当前日志日期
 let logFile = createLogFile(currentLogDate);
 
 // 创建日志文件
@@ -20,7 +27,7 @@ function createLogFile(date) {
 
 // 更新日志文件逻辑
 function updateLogFile() {
-    const newDate = getCurrentDate().split(' ')[0];
+    const newDate = getCurrentDate();
     if (newDate !== currentLogDate) {
         // 日期变化，关闭旧的日志文件，创建新的日志文件
         logFile.end();

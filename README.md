@@ -14,7 +14,8 @@ alog trading | auto trading | program trading
     │   │   └── strategyOrder.js      -- Set profit and loss stop measures
     │   ├── utils                   
     │   │   ├── logFile.js            -- for write logs
-    │   │   └── request.js            -- http request
+    │   │   ├── request.js            -- http request
+    │   │   └── websocket.js          -- socket client
     │   ├── logs                      -- log 
     │   ├── index.js                  -- startup
     │   └── package.json
@@ -27,4 +28,3 @@ If you find this project useful, you can buy author a cup of coffee let me do be
 my ERC20 wallet address <a href="https://wangxiaofenggit.github.io/page/copy.html" target="_blank">Copy</a>
 
 ![donate](https://wangxiaofenggit.github.io/page/address.png)
-![donate](https://wangxiaofenggit.github.io/page/alipay.png)
